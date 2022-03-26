@@ -1,0 +1,1 @@
+scrapy crawl gpu -o output.csv
