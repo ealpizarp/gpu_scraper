@@ -6,8 +6,9 @@ import scrapy;
 class GpuSpider(scrapy.Spider):
     name = "gpu"
     start_urls = [
-        'https://www.microcenter.com/category/4294966937/graphics-cards',
+        'https://www.microcenter.com/search/search_results.aspx?Ntk=all&sortby=match&N=4294966937&myStore=false',
     ]
+    current_url = ''
 
     def parse(self, response):
 
@@ -20,6 +21,7 @@ class GpuSpider(scrapy.Spider):
             yield response.follow(gpu_link.get(), callback=self.parseSpecs)
 
     def parseSpecs(self, response):
+        self.current_url = response.url
         specs = response.css('main')
         for spec in specs:
             yield {

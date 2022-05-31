@@ -13,6 +13,15 @@ SPIDER_MODULES = ['gpu_scraper.spiders']
 NEWSPIDER_MODULE = 'gpu_scraper.spiders'
 
 
+MONGODB_SERVER = "localhost"
+MONGO_URI = 'mongodb://34.229.176.13:27017/?readPreference=primary&serverSelectionTimeoutMS=2000&appname=mongosh%201.4.2&directConnection=true&ssl=false'
+MONGO_DATABASE = 'microcenter-gpus'
+items = 'gpus'
+MONGODB_PORT = 27017
+MONGODB_DB = "microcenter-gpus"
+MONGODB_COLLECTION = "gpus"
+
+
 # Crawl responsibly by identifying yourself (and your website) on the user-agent
 #USER_AGENT = 'gpu_scraper (+http://www.yourdomain.com)'
 
@@ -62,9 +71,9 @@ ROBOTSTXT_OBEY = True
 
 # Configure item pipelines
 # See https://docs.scrapy.org/en/latest/topics/item-pipeline.html
-#ITEM_PIPELINES = {
-#    'gpu_scraper.pipelines.GpuScraperPipeline': 300,
-#}
+ITEM_PIPELINES = {
+    'gpu_scraper.pipelines.GpuScraperPipeline': 300,
+}
 
 # Enable and configure the AutoThrottle extension (disabled by default)
 # See https://docs.scrapy.org/en/latest/topics/autothrottle.html
