@@ -1,6 +1,6 @@
-# Microcenter GPUs scraper
+# Microcenter & TechCrunch scraper
 
-A very simple web scraper that extracts the currently listed GPUs for sale in Microcenter. It is implemented in Python and
+A very simple web scraper that extracts the currently listed GPUs for sale in Microcenter and the most popular articles in TechCrunch. It is implemented in Python and
 uses the scrapy library.
 
 ## Installing Scrapy
@@ -35,6 +35,8 @@ Once you have installed Scrapy succesfully you need to execute the following com
 inside the project folder (gpu_scrapper)
 
 `scrapy crawl gpu`
+
+`scrapy crawl techcrunch`
 
 Or you can also run the following `sh` script
 
